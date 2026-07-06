@@ -40,7 +40,7 @@ https://logiclens-adk-7fbwe3it3a-ue.a.run.app/
 
 
 ```md
-![Dashboard]()
+![Dashboard](https://raw.githubusercontent.com/rahulaleshwar/LogicLens-AI/refs/heads/master/images/landing.png)
 
 ![Assessment]()
 
