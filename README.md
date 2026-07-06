@@ -68,10 +68,7 @@ https://logiclens-adk-7fbwe3it3a-ue.a.run.app/
 
 # 🏗 Architecture
 
-```md
-![Report]()
-
-```
+![Report](https://raw.githubusercontent.com/rahulaleshwar/LogicLens-AI/refs/heads/master/images/Architecture.jpg)
 
 ---
 
