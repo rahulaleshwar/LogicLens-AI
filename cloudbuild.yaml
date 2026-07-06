@@ -1,0 +1,43 @@
+steps:
+  # Build Docker image
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - "-t"
+      - "us-east1-docker.pkg.dev/$PROJECT_ID/logiclens/logiclens-adk:${_TAG}"
+      - "."
+
+  # Push Docker image
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - "us-east1-docker.pkg.dev/$PROJECT_ID/logiclens/logiclens-adk:${_TAG}"
+
+  # Deploy to Cloud Run
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - logiclens-adk
+      - "--image=us-east1-docker.pkg.dev/$PROJECT_ID/logiclens/logiclens-adk:${_TAG}"
+      - "--region=${_REGION}"
+      - "--platform=managed"
+      - "--allow-unauthenticated"
+      - "--port=8080"
+      - "--cpu=1"
+      - "--memory=1Gi"
+      - "--timeout=900"
+      - "--concurrency=80"
+      - "--max-instances=2"
+      - "--quiet"
+
+substitutions:
+  _REGION: us-east1
+  _TAG: latest
+
+images:
+  - "us-east1-docker.pkg.dev/$PROJECT_ID/logiclens/logiclens-adk:${_TAG}"
+
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,50 @@
+[project]
+name = "logiclens-adk"
+version = "0.2.0"
+description = "ADK and MCP powered passive web-security analysis"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "google-adk[gcp]>=2.0,<3",
+  "google-genai",
+  "mcp>=1.9,<2",
+  "httpx>=0.28,<1",
+  "python-dotenv",
+  "sqlalchemy[asyncio]>=2,<3",
+  "aiosqlite",
+  "pydantic>=2,<3",
+  "pydantic-settings",
+  "websockets",
+  "fpdf2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.9,<1"]
+
+[project.optional-dependencies]
+lint = ["ruff>=0.9,<1", "codespell>=2.4,<3", "ty>=0.0.1a0"]
+eval = ["google-adk[eval]>=2.0,<3", "google-cloud-aiplatform[evaluation]>=1.156"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "backend"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["-logiclens-scaffold", "frontend", "backend"]
+
+[tool.codespell]
+skip = ".venv,uv.lock,frontend,-logiclens-scaffold,backend"
+ignore-words-list = "hummand,apporoavl,insepction"
+
+[tool.ty.src]
+exclude = [".venv/**", "backend/**", "frontend/**", "-logiclens-scaffold/**"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["logiclens_agent", "backend/app"]
