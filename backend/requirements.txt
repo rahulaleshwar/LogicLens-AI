@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+google-genai
+google-adk[gcp]>=2.0,<3
+mcp>=1.9,<2
+httpx>=0.28,<1
+python-dotenv
+sqlalchemy[asyncio]
+aiosqlite
+pydantic
+pydantic-settings
+websockets
+fpdf2
