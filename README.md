@@ -4,7 +4,7 @@
 > **AI-Powered Multi-Agent Web Application Security Assessment Platform**
 
 <p align="center">
-  <img src="docs/images/banner.png" alt="LogicLens AI Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/rahulaleshwar/LogicLens-AI/refs/heads/master/images/banner.jpg" alt="LogicLens AI Banner" width="100%">
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@ LogicLens AI is an AI-powered multi-agent platform for passive web application s
 # 🎬 Demo
 
 ## Demo Video
-https://youtube.com/
+https://youtu.be/e9MkdY6hxeA
 
 ## Live Demo
 https://logiclens-adk-7fbwe3it3a-ue.a.run.app/
@@ -40,9 +40,9 @@ https://logiclens-adk-7fbwe3it3a-ue.a.run.app/
 
 ![Dashboard](https://raw.githubusercontent.com/rahulaleshwar/LogicLens-AI/refs/heads/master/images/landing.png)
 
-![Assessment]()
+![Assessment](https://raw.githubusercontent.com/rahulaleshwar/LogicLens-AI/refs/heads/master/images/analysis.png)
 
-![Report]()
+![Report](https://raw.githubusercontent.com/rahulaleshwar/LogicLens-AI/refs/heads/master/images/reports.png)
 
 
 ---
